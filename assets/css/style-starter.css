@@ -13296,3 +13296,25 @@ body.dark-theme {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
+
+/* Fix for main header section text colors in dark theme */
+body.dark-theme .content-left h3 {
+  color: #f0f0f0 !important;
+}
+
+body.dark-theme .content-left p {
+  color: #d0d0d0 !important;
+}
+
+body.dark-theme .content-left p b {
+  color: #f0f0f0 !important;
+}
+
+/* Ensure main title section has proper contrast */
+body.dark-theme .w3l-content-photo-5 h3 {
+  color: #f0f0f0 !important;
+}
+
+body.dark-theme .w3l-content-photo-5 p {
+  color: #d0d0d0 !important;
+}
