@@ -22,6 +22,13 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
   <body>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle-wrapper">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+      </button>
+    </div>
 
 <!-- <section class="w3l-bootstrap-header">
   <nav class="navbar navbar-expand-lg navbar-light py-lg-3 py-2">
@@ -64,16 +71,6 @@ Author URL: http://w3layouts.com
 <div class="w3l-content-photo-5 py-5" id="about">
 	<div class="content-main pt-lg-5 pt-md-3 pb-0" style='padding-top: 0rem !important;'>
 		<div class="container">
-      <div style='text-align: right;'>
-        <p>Project developed at
-          <img src="assets/images/logos.png" alt="Logo" width="50%">
-          
-        <!-- <img src="assets/images/normal.png" alt="Lasige logo" width="150" height="55">
-        <img src="assets/images/ciencias_ul_azul_h_s-ass.png" alt="FCUL logo" width="100" height="40"> -->
-        <!-- Add lasige and FCUL logo -->
-      </p>
-      </div>
-      <br/><br/><br/>
 			<div class="row">
 				<div class="col-lg-5 content-photo">
 					<a href="#"><img src="assets/images/Liquid2.png" class="img-fluid" alt="content-photo"></a>
@@ -81,13 +78,118 @@ Author URL: http://w3layouts.com
 				<div class="col-lg-7 content-left mt-lg-0 mt-5 pl-lg-5">
 					<h3>Extending Java with <br/>Liquid Types</h3>
 					<p class="mb-0">
-            <b>Extend your Java code with Refinement Types and catch bugs earlier!</b><br/>
-            LiquidJava implements an additional type system with Refinement Types on top of Java. 
-            It allows developers to express better restrictions on the code and discover more bugs before executing the program.
+            <b>Extend your Java code with Refinement Types and catch bugs earlier!</b>
             </p>
 				</div>
 			</div>
         <br/><br/>
+
+        <!-- What is LiquidJava Section -->
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="info-section">
+              <h4 class="section-title">What is LiquidJava?</h4>
+              <p class="section-description">
+                LiquidJava extends Java's type system with <i>refinement types</i>—types enriched with logical predicates.
+                This allows you to express and verify precise properties about your code, catching bugs like null pointer exceptions,
+                division by zero, and array index errors at compile time rather than runtime. By adding lightweight annotations to your
+                Java code, LiquidJava provides an additional layer of safety without requiring you to rewrite your programs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Example Section -->
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <h4 class="section-title text-center">See It in Action</h4>
+            <p class="text-center section-subtitle">Here's a simple example showing how LiquidJava catches potential runtime errors at compile time:</p>
+
+            <div class="row mt-4">
+              <div class="col-lg-6 mb-4">
+                <div class="code-comparison-card">
+                  <div class="card-header-danger">
+                    <h5>Without LiquidJava</h5>
+                    <p class="card-subtitle">Compiles but may crash at runtime</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">;</span>  <span style="color: #75715e">// potential division by zero!</span>
+<span style="color: #f92672">}</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>  <span style="color: #75715e">// Runtime error!</span></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mb-4">
+                <div class="code-comparison-card">
+                  <div class="card-header-success">
+                    <h5>With LiquidJava</h5>
+                    <p class="card-subtitle">Verified safe at compile time</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;b != 0&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">;</span>  <span style="color: #75715e">// guaranteed safe!</span>
+<span style="color: #f92672">}</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>  <span style="color: #75715e">// Compile-time error!</span></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why LiquidJava Section -->
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="features-section">
+              <h4 class="section-title text-center">Why LiquidJava?</h4>
+              <div class="row mt-4">
+                <div class="col-lg-10 offset-lg-1">
+                  <ul class="features-list">
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Catch null pointer exceptions before runtime</strong>
+                        <p>Verify that objects are non-null where needed</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Verify array bounds automatically</strong>
+                        <p>Ensure array indices are always within valid ranges</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Ensure division by non-zero values</strong>
+                        <p>Prevent division-by-zero errors at compile time</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Express and check custom invariants</strong>
+                        <p>Define and verify application-specific properties</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Integrate with existing Java code</strong>
+                        <p>Add refinements incrementally to your projects</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <br/>      
 			<div class="row">
         <div class="col-lg-2 content-left mt-lg-0 mt-5 pl-lg-5">
@@ -137,6 +239,33 @@ Author URL: http://w3layouts.com
             </div>
 				</div>
 			</div>
+
+      <!-- Get Started Section -->
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-12">
+          <div class="get-started-section">
+            <h4 class="section-title text-center">Get Started</h4>
+            <div class="row mt-4">
+              <div class="col-lg-8 offset-lg-2">
+                <p class="get-started-text">
+                  Ready to try LiquidJava? Visit our <a href="https://github.com/liquid-java/liquidjava" class="inline-link"><strong>main GitHub repository</strong></a>
+                  for installation instructions and comprehensive examples. You can also follow our
+                  <a href="https://github.com/liquid-java/liquidjava-tutorial" class="inline-link"><strong>interactive tutorial</strong></a> to learn how to use
+                  LiquidJava's capabilities step by step.
+                </p>
+                <div class="cta-box">
+                  <p class="cta-text">
+                    <span class="fa fa-download"></span>
+                    Install the <a href="https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java" class="inline-link"><strong>Visual Studio Code plugin</strong></a>
+                    to get started with LiquidJava in your favorite IDE.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 		</div>
 	</div>
 </div>
@@ -583,6 +712,28 @@ Author URL: http://w3layouts.com
 </section> 
   
  
+ <!-- Research Context Section -->
+ <section class="w3l-about">
+  <div class="skills-bars py-5" style="background-color: #f8f9fa;">
+    <div class="container py-md-3">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h4><b>Research Context</b></h4>
+          <p style="font-size: 16px; line-height: 1.8; max-width: 900px; margin: 20px auto;">
+            LiquidJava is a research project focusing on making formal verification accessible to Java developers
+            through refinement types. The project has been developed at LASIGE, Faculdade de Ciências, Universidade de Lisboa,
+            with contributions from researchers at Carnegie Mellon University.
+          </p>
+          <div style="margin-top: 30px;">
+            <p style="margin-bottom: 10px;">Project developed at</p>
+            <img src="assets/images/logos.png" alt="LASIGE and FCUL logos" style="max-width: 500px; width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
  <!-- grids block 5 -->
  <section class="w3l-footer-29-main" id="footer">
   <div class="footer-29 text-center">
@@ -651,7 +802,62 @@ Author URL: http://w3layouts.com
 
 <!-- Smooth scrolling -->
 
+<!-- Dark Mode Toggle Script -->
+<script>
+  (function() {
+    // Apply theme immediately to prevent flash
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.className = savedTheme + '-theme';
 
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      // Ensure theme is applied
+      if (!body.classList.contains('light-theme') && !body.classList.contains('dark-theme')) {
+        body.classList.add(savedTheme + '-theme');
+      }
+
+      // Update toggle button state
+      updateToggleButton(savedTheme);
+
+      themeToggle.addEventListener('click', function() {
+        const isDark = body.classList.contains('dark-theme');
+
+        // Remove both classes first
+        body.classList.remove('dark-theme');
+        body.classList.remove('light-theme');
+
+        if (isDark) {
+          body.classList.add('light-theme');
+          localStorage.setItem('theme', 'light');
+          updateToggleButton('light');
+        } else {
+          body.classList.add('dark-theme');
+          localStorage.setItem('theme', 'dark');
+          updateToggleButton('dark');
+        }
+
+        // Force a repaint
+        void body.offsetHeight;
+      });
+
+      function updateToggleButton(theme) {
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+
+        if (theme === 'dark') {
+          sunIcon.style.display = 'inline';
+          moonIcon.style.display = 'none';
+        } else {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'inline';
+        }
+      }
+    });
+  })();
+</script>
 
 </body>
 
