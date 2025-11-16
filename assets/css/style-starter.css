@@ -12965,9 +12965,6 @@ body:after {
 }
 
 /* Smooth transitions */
-* {
-  transition: background-color 0.3s ease;
-}
 
 a {
   transition: all 0.2s ease;
@@ -13158,3 +13155,104 @@ body.dark-theme .w3l-about .skills-bars[style*="background-color"] {
   animation: none;
 }
 
+
+/* ============================================
+   FORCE Background Color Changes - Override Everything
+   ============================================ */
+
+/* Override global transition that might be interfering */
+body.light-theme,
+body.dark-theme,
+body.light-theme *,
+body.dark-theme * {
+  transition: background-color 0.5s ease, color 0.3s ease !important;
+}
+
+/* Force body backgrounds */
+body.light-theme,
+body.light-theme .w3l-content-photo-5 {
+  background-color: #f8f9fa !important;
+  background-image: none !important;
+}
+
+body.dark-theme,
+body.dark-theme .w3l-content-photo-5 {
+  background-color: #1a1a2e !important;
+  background-image: none !important;
+}
+
+/* Force section backgrounds to change */
+body.light-theme .w3l-feature-code {
+  background-color: #667eea !important;
+  background-image: none !important;
+}
+
+body.dark-theme .w3l-feature-code {
+  background-color: #0f172a !important;
+  background-image: none !important;
+}
+
+body.light-theme .w3l-about,
+body.light-theme .w3l-about .skills-bars {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+body.dark-theme .w3l-about,
+body.dark-theme .w3l-about .skills-bars {
+  background-color: #1a1a2e !important;
+  background-image: none !important;
+}
+
+body.light-theme .w3l-footer-29-main {
+  background-color: #2c3e50 !important;
+  background-image: none !important;
+}
+
+body.dark-theme .w3l-footer-29-main {
+  background-color: #0f172a !important;
+  background-image: none !important;
+}
+
+/* Ensure content area changes too */
+body.light-theme .content-main {
+  background-color: transparent !important;
+}
+
+body.dark-theme .content-main {
+  background-color: transparent !important;
+}
+
+/* Make sure predicate examples section changes */
+body.light-theme .skills-bars[style] {
+  background-color: #ffffff !important;
+}
+
+body.dark-theme .skills-bars[style] {
+  background-color: #1a1a2e !important;
+}
+
+/* Force text colors to update */
+body.dark-theme .w3l-content-photo-5,
+body.dark-theme .w3l-content-photo-5 h1,
+body.dark-theme .w3l-content-photo-5 h2,
+body.dark-theme .w3l-content-photo-5 h3,
+body.dark-theme .w3l-content-photo-5 h4,
+body.dark-theme .w3l-content-photo-5 h5,
+body.dark-theme .w3l-content-photo-5 h6,
+body.dark-theme .w3l-content-photo-5 p {
+  color: #f0f0f0 !important;
+}
+
+body.light-theme .w3l-content-photo-5 h1,
+body.light-theme .w3l-content-photo-5 h2,
+body.light-theme .w3l-content-photo-5 h3,
+body.light-theme .w3l-content-photo-5 h4,
+body.light-theme .w3l-content-photo-5 h5,
+body.light-theme .w3l-content-photo-5 h6 {
+  color: #2c3e50 !important;
+}
+
+body.light-theme .w3l-content-photo-5 p {
+  color: #444 !important;
+}
