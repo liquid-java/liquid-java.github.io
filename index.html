@@ -78,68 +78,111 @@ Author URL: http://w3layouts.com
         <br/><br/>
 
         <!-- What is LiquidJava Section -->
-        <div class="row">
-          <div class="col-lg-12 content-left mt-lg-0 mt-5 pl-lg-5">
-            <h4><b>What is LiquidJava?</b></h4>
-            <p>
-              LiquidJava extends Java's type system with <i>refinement types</i>—types enriched with logical predicates.
-              This allows you to express and verify precise properties about your code, catching bugs like null pointer exceptions,
-              division by zero, and array index errors at compile time rather than runtime. By adding lightweight annotations to your
-              Java code, LiquidJava provides an additional layer of safety without requiring you to rewrite your programs.
-            </p>
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="info-section">
+              <h4 class="section-title">What is LiquidJava?</h4>
+              <p class="section-description">
+                LiquidJava extends Java's type system with <i>refinement types</i>—types enriched with logical predicates.
+                This allows you to express and verify precise properties about your code, catching bugs like null pointer exceptions,
+                division by zero, and array index errors at compile time rather than runtime. By adding lightweight annotations to your
+                Java code, LiquidJava provides an additional layer of safety without requiring you to rewrite your programs.
+              </p>
+            </div>
           </div>
         </div>
-        <br/>
 
         <!-- Quick Example Section -->
-        <div class="row">
-          <div class="col-lg-12 content-left mt-lg-0 mt-5 pl-lg-5">
-            <h4><b>See It in Action</b></h4>
-            <p class="mb-3">Here's a simple example showing how LiquidJava catches potential runtime errors at compile time:</p>
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <h4 class="section-title text-center">See It in Action</h4>
+            <p class="text-center section-subtitle">Here's a simple example showing how LiquidJava catches potential runtime errors at compile time:</p>
 
-            <div class="row">
-              <div class="col-lg-6">
-                <h5>Without LiquidJava</h5>
-                <p class="small"><i>Compiles but may crash at runtime</i></p>
-                <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                  <pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <div class="row mt-4">
+              <div class="col-lg-6 mb-4">
+                <div class="code-comparison-card">
+                  <div class="card-header-danger">
+                    <h5>Without LiquidJava</h5>
+                    <p class="card-subtitle">Compiles but may crash at runtime</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">;</span>  <span style="color: #75715e">// potential division by zero!</span>
 <span style="color: #f92672">}</span>
 
 <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>  <span style="color: #75715e">// Runtime error!</span></pre>
+                  </div>
                 </div>
               </div>
 
-              <div class="col-lg-6">
-                <h5>With LiquidJava</h5>
-                <p class="small"><i>Verified safe at compile time</i></p>
-                <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                  <pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;b != 0&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+              <div class="col-lg-6 mb-4">
+                <div class="code-comparison-card">
+                  <div class="card-header-success">
+                    <h5>With LiquidJava</h5>
+                    <p class="card-subtitle">Verified safe at compile time</p>
+                  </div>
+                  <div class="code-block">
+                    <pre><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;b != 0&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">;</span>  <span style="color: #75715e">// guaranteed safe!</span>
 <span style="color: #f92672">}</span>
 
 <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">divide</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>  <span style="color: #75715e">// Compile-time error!</span></pre>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <br/><br/>
 
         <!-- Why LiquidJava Section -->
-        <div class="row">
-          <div class="col-lg-12 content-left mt-lg-0 mt-5 pl-lg-5">
-            <h4><b>Why LiquidJava?</b></h4>
-            <ul style="font-size: 16px; line-height: 1.8;">
-              <li><b>Catch null pointer exceptions before runtime:</b> Verify that objects are non-null where needed</li>
-              <li><b>Verify array bounds automatically:</b> Ensure array indices are always within valid ranges</li>
-              <li><b>Ensure division by non-zero values:</b> Prevent division-by-zero errors at compile time</li>
-              <li><b>Express and check custom invariants:</b> Define and verify application-specific properties</li>
-              <li><b>Integrate with existing Java code:</b> Add refinements incrementally to your projects</li>
-            </ul>
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="features-section">
+              <h4 class="section-title text-center">Why LiquidJava?</h4>
+              <div class="row mt-4">
+                <div class="col-lg-10 offset-lg-1">
+                  <ul class="features-list">
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Catch null pointer exceptions before runtime</strong>
+                        <p>Verify that objects are non-null where needed</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Verify array bounds automatically</strong>
+                        <p>Ensure array indices are always within valid ranges</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Ensure division by non-zero values</strong>
+                        <p>Prevent division-by-zero errors at compile time</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Express and check custom invariants</strong>
+                        <p>Define and verify application-specific properties</p>
+                      </div>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-icon">✓</span>
+                      <div>
+                        <strong>Integrate with existing Java code</strong>
+                        <p>Add refinements incrementally to your projects</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <br/><br/>
         <br/>      
 			<div class="row">
         <div class="col-lg-2 content-left mt-lg-0 mt-5 pl-lg-5">
@@ -191,20 +234,28 @@ Author URL: http://w3layouts.com
 			</div>
 
       <!-- Get Started Section -->
-      <br/><br/>
-      <div class="row">
-        <div class="col-lg-12 content-left mt-lg-0 mt-5 pl-lg-5">
-          <h4><b>Get Started</b></h4>
-          <p>
-            Ready to try LiquidJava? Visit our <a href="https://github.com/liquid-java/liquidjava"><b>main GitHub repository</b></a>
-            for installation instructions and comprehensive examples. You can also follow our
-            <a href="https://github.com/liquid-java/liquidjava-tutorial"><b>interactive tutorial</b></a> to learn how to use
-            LiquidJava's capabilities step by step.
-          </p>
-          <p>
-            Install the <a href="https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java"><b>Visual Studio Code plugin</b></a>
-            to get started with LiquidJava in your favorite IDE.
-          </p>
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-12">
+          <div class="get-started-section">
+            <h4 class="section-title text-center">Get Started</h4>
+            <div class="row mt-4">
+              <div class="col-lg-8 offset-lg-2">
+                <p class="get-started-text">
+                  Ready to try LiquidJava? Visit our <a href="https://github.com/liquid-java/liquidjava" class="inline-link"><strong>main GitHub repository</strong></a>
+                  for installation instructions and comprehensive examples. You can also follow our
+                  <a href="https://github.com/liquid-java/liquidjava-tutorial" class="inline-link"><strong>interactive tutorial</strong></a> to learn how to use
+                  LiquidJava's capabilities step by step.
+                </p>
+                <div class="cta-box">
+                  <p class="cta-text">
+                    <span class="fa fa-download"></span>
+                    Install the <a href="https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java" class="inline-link"><strong>Visual Studio Code plugin</strong></a>
+                    to get started with LiquidJava in your favorite IDE.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

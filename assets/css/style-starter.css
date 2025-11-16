@@ -12633,123 +12633,353 @@ body:after {
   .blog-post-content h3 {
     font-size: 1.5rem;
   }
+
+/* ============================================
+   LiquidJava Custom Styles - Enhanced Design
+   ============================================ */
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
-@media (max-width: 767px) {
-  .blog-post-title {
-    font-size: 1.7rem;
-  }
-
-  .blog-post-card {
-    margin-bottom: 3rem;
-  }
-}
-/* LiquidJava Custom Styles */
-
-/* Code comparison section - responsive adjustments */
-@media (max-width: 991px) {
-  .col-lg-6 > div[style*="background: #272822"] {
-    margin-bottom: 20px;
-  }
-}
-
-/* Improve spacing for new sections */
-.content-left ul {
-  padding-left: 20px;
-}
-
-.content-left ul li {
-  margin-bottom: 10px;
-}
-
-/* Better link styling in paragraphs */
-.content-left p a {
-  color: #0066cc;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s ease;
-}
-
-.content-left p a:hover {
-  border-bottom: 1px solid #0066cc;
-}
-
-.content-left p a b {
-  color: #0052a3;
-}
-
-/* Code block improvements for mobile */
-@media (max-width: 767px) {
-  pre {
-    font-size: 12px;
-    overflow-x: auto;
-  }
-  
-  div[style*="background: #272822"] {
-    padding: 0.5em !important;
-  }
-}
-
-/* Research context section styling */
-.w3l-about .skills-bars h4 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Ensure proper spacing between sections */
-.row + br {
+.section-title::after {
+  content: '';
   display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 15px auto 0;
 }
 
-/* Better visual hierarchy for headings */
-.content-left h4 {
-  color: #2c3e50;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-
-.content-left h5 {
-  color: #34495e;
-  margin-bottom: 10px;
-}
-
-/* Small text styling */
-p.small {
-  font-size: 14px;
+.section-subtitle {
+  font-size: 1.1rem;
   color: #666;
-  margin-bottom: 10px;
-}
-
-/* Feature list styling */
-.content-left ul[style*="font-size: 16px"] {
+  margin-bottom: 2rem;
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.content-left ul[style*="font-size: 16px"] li b {
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Info Section */
+.info-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 1rem;
+}
+
+.info-section .section-title {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.info-section .section-title::after {
+  background: #fff;
+}
+
+.info-section .section-description {
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+/* Code Comparison Cards */
+.code-comparison-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.code-comparison-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header-danger {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.card-header-success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.card-header-danger h5,
+.card-header-success h5 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.card-subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  font-style: italic;
+  color: #fff;
+}
+
+.code-block {
+  background: #272822;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  color: #f8f8f2;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Features Section */
+.features-section {
+  padding: 2rem 1rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transform: translateX(5px);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: #667eea;
+  margin-right: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  width: 30px;
+  text-align: center;
+}
+
+.feature-item strong {
+  display: block;
+  font-size: 1.15rem;
   color: #2c3e50;
+  margin-bottom: 0.3rem;
 }
 
-/* Responsive improvements for main heading */
+.feature-item p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Get Started Section */
+.get-started-section {
+  padding: 2rem 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin: 0 1rem;
+}
+
+.get-started-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.cta-text {
+  color: #fff;
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cta-text .fa {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.inline-link {
+  color: #667eea;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease;
+  font-weight: 500;
+}
+
+.inline-link:hover {
+  border-bottom: 2px solid #667eea;
+}
+
+.cta-box .inline-link {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-box .inline-link:hover {
+  border-bottom-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .info-section {
+    padding: 2rem 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .code-comparison-card {
+    margin-bottom: 2rem;
+  }
+  
+  .get-started-section {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  .info-section {
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+  
+  .info-section .section-description {
+    font-size: 1rem;
+  }
+  
+  .code-block {
+    padding: 1rem;
+  }
+  
+  .code-block pre {
+    font-size: 0.8rem;
+  }
+  
+  .feature-item {
+    padding: 1rem;
+  }
+  
+  .feature-item strong {
+    font-size: 1rem;
+  }
+  
+  .feature-item p {
+    font-size: 0.9rem;
+  }
+  
+  .get-started-section {
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+  
+  .get-started-text {
+    font-size: 1rem;
+  }
+  
+  .cta-box {
+    padding: 1.5rem;
+  }
+  
+  .cta-text {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 576px) {
-  h3 {
-    font-size: 24px;
+  .section-title {
+    font-size: 1.3rem;
   }
   
-  h4 {
-    font-size: 20px;
+  .card-header-danger h5,
+  .card-header-success h5 {
+    font-size: 1.1rem;
   }
   
-  h5 {
-    font-size: 18px;
+  .feature-icon {
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
   }
 }
 
-/* Code example section improvements */
-.content-left .row .col-lg-6 h5 {
-  min-height: 30px;
+/* Better spacing for main content area */
+.w3l-content-photo-5 .container {
+  max-width: 1200px;
 }
 
-/* Better spacing for Get Started section */
-.content-left p + p {
-  margin-top: 15px;
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease;
+}
+
+a {
+  transition: all 0.2s ease;
+}
+
+/* Print styles */
+@media print {
+  .code-comparison-card,
+  .feature-item,
+  .get-started-section,
+  .info-section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
 }
