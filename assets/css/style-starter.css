@@ -12644,3 +12644,112 @@ body:after {
     margin-bottom: 3rem;
   }
 }
+/* LiquidJava Custom Styles */
+
+/* Code comparison section - responsive adjustments */
+@media (max-width: 991px) {
+  .col-lg-6 > div[style*="background: #272822"] {
+    margin-bottom: 20px;
+  }
+}
+
+/* Improve spacing for new sections */
+.content-left ul {
+  padding-left: 20px;
+}
+
+.content-left ul li {
+  margin-bottom: 10px;
+}
+
+/* Better link styling in paragraphs */
+.content-left p a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s ease;
+}
+
+.content-left p a:hover {
+  border-bottom: 1px solid #0066cc;
+}
+
+.content-left p a b {
+  color: #0052a3;
+}
+
+/* Code block improvements for mobile */
+@media (max-width: 767px) {
+  pre {
+    font-size: 12px;
+    overflow-x: auto;
+  }
+  
+  div[style*="background: #272822"] {
+    padding: 0.5em !important;
+  }
+}
+
+/* Research context section styling */
+.w3l-about .skills-bars h4 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Ensure proper spacing between sections */
+.row + br {
+  display: block;
+}
+
+/* Better visual hierarchy for headings */
+.content-left h4 {
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.content-left h5 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+/* Small text styling */
+p.small {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Feature list styling */
+.content-left ul[style*="font-size: 16px"] {
+  max-width: 800px;
+}
+
+.content-left ul[style*="font-size: 16px"] li b {
+  color: #2c3e50;
+}
+
+/* Responsive improvements for main heading */
+@media (max-width: 576px) {
+  h3 {
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 20px;
+  }
+  
+  h5 {
+    font-size: 18px;
+  }
+}
+
+/* Code example section improvements */
+.content-left .row .col-lg-6 h5 {
+  min-height: 30px;
+}
+
+/* Better spacing for Get Started section */
+.content-left p + p {
+  margin-top: 15px;
+}
