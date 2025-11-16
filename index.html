@@ -22,6 +22,13 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
   <body>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle-wrapper">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+      </button>
+    </div>
 
 <!-- <section class="w3l-bootstrap-header">
   <nav class="navbar navbar-expand-lg navbar-light py-lg-3 py-2">
@@ -795,7 +802,49 @@ Author URL: http://w3layouts.com
 
 <!-- Smooth scrolling -->
 
+<!-- Dark Mode Toggle Script -->
+<script>
+  (function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    body.classList.add(currentTheme + '-theme');
+
+    // Update toggle button state
+    updateToggleButton(currentTheme);
+
+    themeToggle.addEventListener('click', function() {
+      const isDark = body.classList.contains('dark-theme');
+
+      if (isDark) {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        localStorage.setItem('theme', 'light');
+        updateToggleButton('light');
+      } else {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+        updateToggleButton('dark');
+      }
+    });
+
+    function updateToggleButton(theme) {
+      const sunIcon = themeToggle.querySelector('.sun-icon');
+      const moonIcon = themeToggle.querySelector('.moon-icon');
+
+      if (theme === 'dark') {
+        sunIcon.style.display = 'inline';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'inline';
+      }
+    }
+  })();
+</script>
 
 </body>
 
