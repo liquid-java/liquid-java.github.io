@@ -13318,3 +13318,109 @@ body.dark-theme .w3l-content-photo-5 h3 {
 body.dark-theme .w3l-content-photo-5 p {
   color: #d0d0d0 !important;
 }
+
+/* Fix for light theme - ensure proper backgrounds at all screen sizes */
+body.light-theme {
+  background-color: #ffffff;
+}
+
+body.light-theme .w3l-content-photo-5 {
+  background-color: #ffffff;
+}
+
+/* Ensure sections have proper spacing and backgrounds */
+.w3l-content-photo-5 {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Light theme overrides to ensure colors are visible */
+body.light-theme .info-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+body.light-theme .code-comparison-card {
+  background: #fff !important;
+}
+
+body.light-theme .card-header-danger {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+body.light-theme .card-header-success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+body.light-theme .feature-item {
+  background: #f8f9fa !important;
+}
+
+body.light-theme .get-started-section {
+  background: #f8f9fa !important;
+}
+
+body.light-theme .cta-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Ensure text colors are correct in light theme */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+  color: #2c3e50;
+}
+
+body.light-theme p {
+  color: #444;
+}
+
+body.light-theme .section-title {
+  color: #2c3e50 !important;
+}
+
+body.light-theme .section-subtitle {
+  color: #666 !important;
+}
+
+body.light-theme .section-description {
+  color: #444 !important;
+}
+
+/* Info section text stays white in light theme */
+body.light-theme .info-section .section-title,
+body.light-theme .info-section .section-description {
+  color: #fff !important;
+}
+
+/* Card headers text stays white in light theme */
+body.light-theme .card-header-danger h5,
+body.light-theme .card-header-danger p,
+body.light-theme .card-header-success h5,
+body.light-theme .card-header-success p {
+  color: #fff !important;
+}
+
+/* CTA box text stays white in light theme */
+body.light-theme .cta-text {
+  color: #fff !important;
+}
+
+body.light-theme .cta-box .inline-link {
+  color: #fff !important;
+}
+
+/* Feature items in light theme */
+body.light-theme .feature-item strong {
+  color: #2c3e50;
+}
+
+body.light-theme .feature-item p {
+  color: #666;
+}
+
+body.light-theme .feature-icon {
+  color: #667eea;
+}
+
