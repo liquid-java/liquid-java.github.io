@@ -15,11 +15,19 @@ Author URL: http://w3layouts.com
     <!-- web fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <!-- //web fonts -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Template CSS -->
+    <!-- Mermaid for state diagrams in the examples gallery -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+    <!-- Prism (Monokai theme) for code syntax highlighting in the gallery -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <!-- Template CSS (must load AFTER Prism so our font-size overrides win) -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" defer></script>
   </head>
   <body>
 
@@ -101,40 +109,30 @@ Author URL: http://w3layouts.com
       <br/><br/><br/>
       <div class="row">
 				<div class="col-lg-12 content-left mt-lg-0 mt-5 pl-lg-5">
-          <h4><b>Learn more</b> about LiquidJava!</br></h4>
-          
-          <div>
-          <h5  class="small_p"><span class="fa fa-file"></span> Papers:</h5>
-          <p class="small_p"><b><a href="https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00132">Usability-Oriented Design of Liquid Types for Java</a>, </b>
-            by Catarina Gamboa, Paulo Canelas, Christopher Timperley and Alcides Fonseca, ICSE 2023</p>
+          <h4><b>Learn more</b> about LiquidJava!</h4>
+
+          <div class="lj-resources">
+            <a class="lj-resource-card" href="https://github.com/liquid-java" target="_blank" rel="noopener">
+              <span class="lj-resource-icon fa fa-github" aria-hidden="true"></span>
+              <span class="lj-resource-title">GitHub organization</span>
+              <span class="lj-resource-sub">Verifier, API, examples, external libs — all in one place.</span>
+            </a>
+            <a class="lj-resource-card" href="https://github.com/liquid-java/liquidjava-docs" target="_blank" rel="noopener">
+              <span class="lj-resource-icon fa fa-book" aria-hidden="true"></span>
+              <span class="lj-resource-title">Documentation</span>
+              <span class="lj-resource-sub">Annotation reference and language guide.</span>
+            </a>
+            <a class="lj-resource-card" href="https://github.com/liquid-java/liquidjava-tutorial" target="_blank" rel="noopener">
+              <span class="lj-resource-icon fa fa-graduation-cap" aria-hidden="true"></span>
+              <span class="lj-resource-title">Tutorial</span>
+              <span class="lj-resource-sub">Hands-on walkthrough — learn LiquidJava by example.</span>
+            </a>
+            <a class="lj-resource-card" href="https://dl.acm.org/doi/abs/10.1109/ICSE48619.2023.00132" target="_blank" rel="noopener">
+              <span class="lj-resource-icon fa fa-file-text-o" aria-hidden="true"></span>
+              <span class="lj-resource-title">Research paper</span>
+              <span class="lj-resource-sub">Usability-Oriented Design of Liquid Types for Java — ICSE 2023.</span>
+            </a>
           </div>
-          </br>
-
-          <div class="row">
-
-            <div class = "col-lg-6">
-              <h5  class="small_p"><span class="fa fa-image"></span> Posters:</h5>
-              <p class="small_p"><b><a href="https://icse2023.paperlessevents.com.au/share/Gamboa-85">Usability-Oriented Design of Liquid Types for Java</a>, </b>
-                by Catarina Gamboa, Paulo Canelas, Christopher Timperley and Alcides Fonseca, ICSE digital poster session.</p>
-              
-              <p class="small_p"><b><a href="https://catarinagamboa.github.io/assets/docs/poster_LiquidJava.pdf">LiquidJava: Adding Lightweight Verification to Java</a>, </b>
-                by Catarina Gamboa, Paulo Canelas, Christopher Timperley and Alcides Fonseca, INForum 2021 - Informatics Symposium, Lisbon, Portugal. Award for Best Student Poster.</p>
-            </div>
-
-            <div class = "col-lg-6">
-              <h5  class="small_p"><span class="fa fa-github"></span> GitHub Repositories:</h5>
-              <p class="small_p"><b><a href="https://github.com/liquid-java/liquidjava">liquidjava</a> </b>
-                - main repository with api, verifier and examples.</p>
-              
-              <p class="small_p"><b><a href="https://github.com/liquid-java/liquidjava-examples">liquidjava-examples</a> </b> - usage examples </p>
-        
-              <p class="small_p"><b><a href="https://github.com/liquid-java/liquid-java-external-libs">liquid-java-external-libs</a> </b> - annotations in Java standard libraries</p>
-              
-
-              <p class="small_p"><b><a href="https://github.com/liquid-java/vscode-liquidjava">vscode-liquidjava</a> </b>
-                - vscode extension for liquidjava using LSP
-              </div>
-            </div>
 				</div>
 			</div>
 		</div>
@@ -144,183 +142,179 @@ Author URL: http://w3layouts.com
 
 
 
-<section class="w3l-feature-code" id="features">
-	<div class="grid top-bottom">
-		<div class="container">
-			<div class="heading text-center mx-auto">
-          <h3 class="head text-white">Install the LiquidJava Plugin</h3>
-          <h5 class="head text-white mt-3">Download the <a href="https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java" style='color:white;'><span style='color: #ffb3d9'>Visual Studio Code plugin</span></a></h5>
-          <p class="my-3 head text-white">Also available in the <a href="https://open-vsx.org/extension/AlcidesFonseca/liquid-java" style='color:white;'><span style='color: #ffb3d9'>Open VSX Registry</span></a></p>
-          <p p class="my-3 head text-white"> 
-            <strong>Requirements:</strong> 
-            <br/>Visual Studio Code <a href='https://code.visualstudio.com/#alt-downloads'><span class="fa fa-external-link-square" style='color:#959595'></span></a></li>
-            <br/>JDK 20 <a href='https://www.oracle.com/java/technologies/downloads/#java20'><span class="fa fa-external-link-square" style='color:#959595'></span> </a></li>
-            <br/>Language Support for Java by Red Hat plugin <a href='https://marketplace.visualstudio.com/items?itemName=redhat.java'><span class="fa fa-external-link-square" style='color:#959595'></span></a></li>
+<section class="w3l-feature-code lj-install" id="features">
+  <div class="grid top-bottom">
+    <div class="container">
+      <div class="lj-install-head">
+        <span class="lj-install-eyebrow">Get started</span>
+        <h3 class="lj-install-title">Refine your Java in three steps</h3>
+        <p class="lj-install-lede">
+          The LiquidJava plugin runs inside Visual Studio Code and gives you inline diagnostics
+          as you type — no separate verifier window to babysit.
+        </p>
+
+        <div class="lj-install-cta">
+          <a class="lj-install-btn lj-install-btn--primary"
+             href="https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java"
+             target="_blank" rel="noopener">
+            <span class="fa fa-download" aria-hidden="true"></span>
+            Install for VS&nbsp;Code
+          </a>
+          <a class="lj-install-btn lj-install-btn--secondary"
+             href="https://open-vsx.org/extension/AlcidesFonseca/liquid-java"
+             target="_blank" rel="noopener">
+            Get on Open VSX
+          </a>
+        </div>
+      </div>
+
+      <ol class="lj-steps">
+        <li class="lj-step">
+          <span class="lj-step-num">1</span>
+          <h5 class="lj-step-title">Set up your toolchain</h5>
+          <p class="lj-step-desc">You'll need the basics installed first.</p>
+          <ul class="lj-step-reqs">
+            <li><a href="https://code.visualstudio.com/#alt-downloads" target="_blank" rel="noopener">Visual&nbsp;Studio&nbsp;Code <span class="fa fa-external-link" aria-hidden="true"></span></a></li>
+            <li><a href="https://www.oracle.com/java/technologies/downloads/#java20" target="_blank" rel="noopener">JDK&nbsp;20 <span class="fa fa-external-link" aria-hidden="true"></span></a></li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=redhat.java" target="_blank" rel="noopener">Red Hat Java extension <span class="fa fa-external-link" aria-hidden="true"></span></a></li>
+          </ul>
+        </li>
+        <li class="lj-step">
+          <span class="lj-step-num">2</span>
+          <h5 class="lj-step-title">Install the plugin</h5>
+          <p class="lj-step-desc">
+            One click from the Marketplace, or search <code class="lj-step-code">LiquidJava</code> inside VS&nbsp;Code's extensions panel.
           </p>
-          <!-- <p class="my-3 head text-white">  <a href="./assets/extension/liquid-java-0.0.14.vsix" style='color:white;'>Download it here</a></p> -->
-      </div>
-        <p class="my-3 text-white text-center">To use the LiquidJava annotations, include the LiquidJava API in your project. Maven and Gradle setup instructions are available <a href="https://github.com/liquid-java/vscode-liquidjava" style='color:white;'><span style='color: #ffb3d9'>here</span></a>.</p>
-        <p class="my-3 text-white text-center">To learn how to use LiquidJava and its capabilities, you can follow the <a href="https://github.com/liquid-java/liquidjava-tutorial" style='color:white;'><span style='color: #ffb3d9'>LiquidJava tutorial guide</span></a>.</p>
-      </div>
-		</div>
-	</div>
+        </li>
+        <li class="lj-step">
+          <span class="lj-step-num">3</span>
+          <h5 class="lj-step-title">Add the API to your project</h5>
+          <p class="lj-step-desc">
+            Drop the LiquidJava API dependency into your build, sprinkle <code class="lj-step-code">@Refinement</code> annotations, and watch the diagnostics light up.
+          </p>
+          <p class="lj-step-links">
+            <a href="https://github.com/liquid-java/liquidjava-docs" target="_blank" rel="noopener">Maven / Gradle setup &rarr;</a>
+            <a href="https://github.com/liquid-java/liquidjava-tutorial" target="_blank" rel="noopener">Tutorial guide &rarr;</a>
+          </p>
+        </li>
+      </ol>
+    </div>
+  </div>
 </section>
 
-<section class="w3l-about ">
-  <div class="skills-bars py-5">
-    <div class="container py-md-3">
-      <div class="row mt-5 pt-3">
-        <h3>Predicates</h3>
-        <p  style=" padding-bottom: 17px;">
-          Refinement Types extend a language with predicates over the basic types. 
-          <code>@Refinement("x > 0") int x;</code> is an example of a variable <code>x</code> that
-          has the basic type <code>int</code>, and is refined with the predicate <code>x > 0</code>.<br/>
-          The predicates allowed inside the refinement belong to <i>quantifier-free linear integer arithmetic</i> logic.
-          Some examples can be seen below.<br/>
-        </p>
-        <!-- <h5>Predicate examples:</h5> -->
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4 col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-            <h4>Equals &nbsp;&nbsp;&nbsp;&nbsp;==</h4>
-            <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;x == 0&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
+<section class="w3l-about lj-pred-section">
+  <div class="container py-md-4 py-3">
 
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4 col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-            <h4>Different &nbsp;&nbsp;&nbsp;&nbsp;!= </h4>
-            <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;x != 0&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-            <h4>Inequality Symbols &nbsp;&nbsp;&nbsp;&nbsp;> >= < <=</h4>
-             <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;y &lt;= 0&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
+    <header class="lj-pred-header">
+      <span class="lj-eyebrow-mini">Reference</span>
+      <h3 class="lj-pred-title">Predicates</h3>
+      <p class="lj-pred-lede">
+        Refinement Types extend the language with predicates over basic types.
+        <code class="lj-inline">@Refinement("x &gt; 0") int x;</code> declares an
+        <code class="lj-inline">int</code> refined by <code class="lj-inline">x &gt; 0</code>.
+        Predicates live in <i>quantifier-free linear integer arithmetic</i>.
+      </p>
+    </header>
 
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Negate &nbsp;&nbsp;&nbsp;&nbsp;!</h4>
-            <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;!(y > 0)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">200</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-      
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-            <h4>And &nbsp;&nbsp;&nbsp;&nbsp;&&</h4>
-            <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;(0 &lt;= y) &amp;&amp; (y &lt;= 100)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">25</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Or &nbsp;&nbsp;&nbsp;&nbsp;||</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;(x == 0) || (x == 100)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Arithmetic Operators &nbsp;&nbsp;&nbsp;&nbsp;+ - * / %</h4>
-          <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;(v + 20) &lt; 100&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">79</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Arithmetic Operators &nbsp;&nbsp;&nbsp;&nbsp;* / %</h4>
-          <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;(odd % 2) != 0&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">odd</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-
-         <!-- ##### Predicate Example ##### -->
-         <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Represent Variable &nbsp;&nbsp;&nbsp;&nbsp;_ </h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;_ > 0 &quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">;</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>If then else &nbsp;&nbsp;&nbsp;&nbsp;()? ():()</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;(a &gt; b)? (_ == a) : (_ == b)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">max</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">){...}</span>
-</pre></div>
-        </div>
-
-
-        <p style=" padding-bottom: 17px;">
-          To simplify the usage of refinements, we can create <b>Predicate Aliases</b> 
-          and apply them to the variables inside a <code>@Refinement</code>.
-          <br/>
-        </p>
-        <br/>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4 col-md-4 col-sm-6 skills-bar-grids  mb-4 pb-2-code">
-          <h4>Alias</h4>
-          <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@RefinementAlias</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(int v) { 0 &lt;= v &amp;&amp; v &lt;= 100 }&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">X</span> <span style="color: #f92672">{...}</span>
-</pre></div>
-      </div>
-
-      <!-- ##### Predicate Example ##### -->
-      <div class="col-lg-4 col-md-4 col-sm-6 skills-bar-grids  mb-4 pb-2-code">
-        <h4>Alias Usage</h4>
-        <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(y)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">25</span><span style="color: #f92672">;</span>
-</pre></div>
-
+    <div class="lj-pred-picker">
+      <label class="lj-pred-pickerlabel" for="ljPredSelect">Browse predicates</label>
+      <select id="ljPredSelect" class="lj-pred-select">
+        <optgroup label="Operators">
+          <option value="op-eq">== &nbsp; Equals</option>
+          <option value="op-neq">!= &nbsp; Different</option>
+          <option value="op-ineq">&lt; &lt;= &gt; &gt;= &nbsp; Inequalities</option>
+          <option value="op-not">! &nbsp; Negate</option>
+          <option value="op-and">&amp;&amp; &nbsp; And</option>
+          <option value="op-or">|| &nbsp; Or</option>
+          <option value="op-add">+ − &nbsp; Add &amp; subtract</option>
+          <option value="op-mul">* / % &nbsp; Multiplicative</option>
+          <option value="op-wild">_ &nbsp; This-variable wildcard</option>
+          <option value="op-ite">? : &nbsp; If-then-else</option>
+        </optgroup>
+        <optgroup label="Aliases">
+          <option value="al-def">@RefinementAlias &nbsp; Define</option>
+          <option value="al-use">Percentage(_) &nbsp; Apply</option>
+        </optgroup>
+        <optgroup label="Object state &amp; ghost">
+          <option value="st-set">@StateSet &nbsp; Class states</option>
+          <option value="st-ref">@StateRefinement &nbsp; Use states</option>
+          <option value="st-ghost">@Ghost &nbsp; Class ghost</option>
+          <option value="st-old">old(this) &nbsp; Use ghost</option>
+        </optgroup>
+      </select>
     </div>
-        <p style=" padding-bottom: 17px;">
-          Refinements can also be used to model <b>Object State</b> by adding the possible 
-          states and transitions to the class and the desired <i>Ghost</i> predicates to model
-          class properties.<br/>
-        </p>
 
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Class States</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@StateSet</span><span style="color: #f92672">({</span><span style="color: #e6db74">&quot;open&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;close&quot;</span><span style="color: #f92672">})</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ReadFile</span><span style="color: #f92672">{...}</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Use States</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">from</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;open(this)&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">to</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;close(this)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">closeFile</span><span style="color: #f92672">(){...}</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Class Ghost</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Ghost</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;int size&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">List</span><span style="color: #f92672">{...}</span>
-</pre></div>
-        </div>
-
-        <!-- ##### Predicate Example ##### -->
-        <div class="col-lg-4  col-md-4 col-sm-6 skills-bar-grids mb-4 pb-2-code">
-          <h4>Use Ghost</h4>
-           <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;size(this) == (size(old(this)) + 1)&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">elem</span><span style="color: #f92672">){...}</span>
-</pre></div>
-        </div>
-
+    <article class="lj-pred-card lj-pred-card--single" id="ljPredCard">
+      <div class="lj-pred-meta">
+        <span class="lj-pred-glyph" id="ljPredGlyph"></span>
+        <span class="lj-pred-name" id="ljPredName"></span>
       </div>
-    </div>
+      <p class="lj-pred-blurb" id="ljPredBlurb"></p>
+<pre class="lj-pred-code"><code class="language-java" id="ljPredCode"></code></pre>
+    </article>
+
+    <script>
+      (function () {
+        var preds = {
+          'op-eq':    { group: 'Operators', glyph: '==', name: 'Equals',
+                        blurb: '', code: '@Refinement("x == 0")\nint x;' },
+          'op-neq':   { group: 'Operators', glyph: '!=', name: 'Different',
+                        blurb: '', code: '@Refinement("x != 0")\nint x;' },
+          'op-ineq':  { group: 'Operators', glyph: '< <= > >=', name: 'Inequalities',
+                        blurb: '', code: '@Refinement("y <= 0")\nint y = 0;' },
+          'op-not':   { group: 'Operators', glyph: '!', name: 'Negate',
+                        blurb: '', code: '@Refinement("!(y > 0)")\nint y = -200;' },
+          'op-and':   { group: 'Operators', glyph: '&&', name: 'And',
+                        blurb: '', code: '@Refinement("(0 <= y) && (y <= 100)")\nint y = 25;' },
+          'op-or':    { group: 'Operators', glyph: '||', name: 'Or',
+                        blurb: '', code: '@Refinement("(x == 0) || (x == 100)")\nint y = 100;' },
+          'op-add':   { group: 'Operators', glyph: '+ −', name: 'Add & subtract',
+                        blurb: '', code: '@Refinement("(v + 20) < 100")\nint v = 79;' },
+          'op-mul':   { group: 'Operators', glyph: '* / %', name: 'Multiplicative',
+                        blurb: '', code: '@Refinement("(odd % 2) != 0")\nint odd = 5;' },
+          'op-wild':  { group: 'Operators', glyph: '_', name: 'This-variable wildcard',
+                        blurb: 'The underscore stands in for the value being refined.',
+                        code: '@Refinement("_ > 0")\nint y = 100;' },
+          'op-ite':   { group: 'Operators', glyph: '? :', name: 'If-then-else',
+                        blurb: '', code: '@Refinement("(a > b) ? (_ == a) : (_ == b)")\npublic int max(int a, int b) {...}' },
+          'al-def':   { group: 'Aliases', glyph: '@RefinementAlias', name: 'Define',
+                        blurb: 'Give a predicate a name so you can reuse it across @Refinement annotations.',
+                        code: '@RefinementAlias("Percentage(int v) { 0 <= v && v <= 100 }")\npublic class X {...}' },
+          'al-use':   { group: 'Aliases', glyph: 'Percentage(_)', name: 'Apply',
+                        blurb: 'Use the alias inside any @Refinement.',
+                        code: '@Refinement("Percentage(y)")\nint y = 25;' },
+          'st-set':   { group: 'Object state & ghost', glyph: '@StateSet', name: 'Class states',
+                        blurb: 'Declare the named states an object can occupy.',
+                        code: '@StateSet({"open", "close"})\npublic class ReadFile {...}' },
+          'st-ref':   { group: 'Object state & ghost', glyph: '@StateRefinement', name: 'Use states',
+                        blurb: 'Constrain the state before and after a method call.',
+                        code: '@StateRefinement(from="open(this)", to="close(this)")\npublic void closeFile() {...}' },
+          'st-ghost': { group: 'Object state & ghost', glyph: '@Ghost', name: 'Class ghost',
+                        blurb: 'Track an auxiliary value that is not in the source code.',
+                        code: '@Ghost("int size")\npublic class List {...}' },
+          'st-old':   { group: 'Object state & ghost', glyph: 'old(this)', name: 'Use ghost',
+                        blurb: 'Refer to the ghost value before the method ran.',
+                        code: '@StateRefinement(to = "size(this) == (size(old(this)) + 1)")\npublic void add(int elem) {...}' }
+        };
+        var sel    = document.getElementById('ljPredSelect');
+        var glyph  = document.getElementById('ljPredGlyph');
+        var name   = document.getElementById('ljPredName');
+        var blurb  = document.getElementById('ljPredBlurb');
+        var code   = document.getElementById('ljPredCode');
+        function render(id) {
+          var p = preds[id]; if (!p) return;
+          glyph.textContent = p.glyph;
+          name.textContent  = p.name;
+          if (p.blurb) { blurb.textContent = p.blurb; blurb.style.display = ''; }
+          else         { blurb.textContent = '';      blurb.style.display = 'none'; }
+          code.textContent = p.code;
+          if (window.Prism) Prism.highlightElement(code);
+        }
+        sel.addEventListener('change', function () { render(sel.value); });
+        render(sel.value || 'op-eq');
+      })();
+    </script>
+
   </div>
 </section>
 
@@ -365,222 +359,182 @@ Author URL: http://w3layouts.com
   </div>
 </section>
 
-<section class="w3l-feature-code" id="features">
-	<div class="grid top-bottom" style="padding: 25px 0px;">
-		<div class="container">
-			<div class="heading text-center mx-auto">
-                <h3 class="head text-white">Refinements in Variables</h3>
-                <p class="my-3 head text-white">We can add a <code>@Refinement</code> in any place we already have a basic type in the code. Hence, in declarations of variable or class fields it is possible to add a refinement type.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="w3l-about ">
-  <a id="refinementVariables">
-    <div class="skills-bars py-5" style="background-color: #fff;">
-     <div class="container py-md-3">
-      <div class="heading mx-auto">
-        <!-- ################ VARIABLES ################ -->
-        
-        <!-- <div class="papers text-center"> -->
-        <!-- Example -->
-        <h5>Positive</h5> 
-        <p>The variable has a value greater than zero.</p>
-          <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-        <pre style="margin: 0; line-height: 125%">
-            <span class='codeline'><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;positive &gt; 0&quot;</span><span style="color: #f92672">)</span></span>
-            <span class='codeline'><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">positive</span><span style="color: #f92672">;</span></span>
-            <span class='codeline'><span style="color: #f8f8f2">positive</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">50</span><span style="color: #f92672">;</span> <span style="color: #75715e">//Correct</span></span>
-            <span class='codeline'><span style="color: #f8f8f2">positive</span> <span style="color: #f92672">=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #75715e">//Error</span></span>
-        </pre>
-        </div>
-        <br/>
-        <!-- Example -->
-        <h5>Percentage</h5> 
-        <p>Lower and upper bounds are set to the variable. The <code>_</code> represents the variable on which the refinement is being applied, in this case <code>_ >= 0</code> is the same as <code>percentage >= 0</code>.</p>
-         <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
-            <span class='codeline'><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;_ &gt;= 0 &amp;&amp; _ &lt;= 100&quot;</span><span style="color: #f92672">)</span></span>
-            <span class='codeline'><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">percentage</span><span style="color: #f92672">;</span></span>
-
-            <span class='codeline'><span style="color: #f8f8f2">percentage</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">50</span><span style="color: #f92672">;</span> <span style="color: #75715e">//Correct</span></span>
-            <span class='codeline'><span style="color: #f8f8f2">percentage</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">99</span><span style="color: #f92672">;</span> <span style="color: #75715e">//Error</span></span>
-        </pre></div>
-        <!-- Example -->
-        <br/>
-        <h5>RGB fields</h5> 
-        <p> Class fields can have refinements just like any local variable. This example shows the use of the Alias <code>RGB</code> in the fields of <code>MyColor</code> class. The alias limits the values that an rgb color can have (an interval between 0 and 255) ensuring that each field only has values that belong to the correct interval. 
-         </p>
-        <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@RefinementAlias</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;RGB(int x) {x &gt;= 0 &amp;&amp; x &lt;= 255}&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MyColor</span><span style="color: #f92672">{</span>
-  <span style="color: #a6e22e">@Refinememt</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;RGB(r)&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">r</span><span style="color: #f92672">;</span>
-  <span style="color: #a6e22e">@Refinememt</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;RGB(_)&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">g</span><span style="color: #f92672">;</span>
-  <span style="color: #a6e22e">@Refinememt</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;RGB(_)&quot;</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">;</span>
-<span style="color: #f92672">}</span>
-</pre></div>
-
-        
-        <!-- ################ END VARIABLES ################ -->
-        <br/><br/><br/>
-      </div>
-    </div>
-  </div>
-  </a>
-</section>
-<section class="w3l-feature-code" id="features">
-  <a id="refinementMethods">
-	<div class="grid top-bottom" style="padding: 25px 0px;">
-		<div class="container">
-			<div class="heading text-center mx-auto">
-                <h3 class="head text-white">Refinements in Methods</h3>
-                <p class="my-3 head text-white"> 
-                  In methods, both the parameters and the return value can have refined types.<br/>The parameters refinements will ensure that the method is only invoked with the expected types. <br/>The return refinement guarantees that the return inside the method's body corresponds to the expected type.
-                </p>
-      </div>
-    </div>
-  </div>
-  </a>
-</section>
-<section class="w3l-about ">
-  <div class="skills-bars py-5" style="background-color: #fff;">
-   <div class="container py-md-3">
-    <div class="heading mx-auto">
-        <!-- ################ METHODS ################ -->
-        <!-- <div class="papers text-center"> -->
-        <!-- Example -->
-        <h5>Absolute</h5> 
-        <p>To refine the <b>return type</b> of a method, we can add the <code>@Refinement</code> annotation above the method. We use the <code>_</code> wild variable to refer to the return value. In this example, we state that the return of <code>absolute</code> has a value between 0 and the parameter <code>n</code>.</p><br/>
-          <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;_ &gt;= 0 &amp;&amp; _ &gt;= n&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">absolute</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
-  <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">)</span>
-      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">;</span>
-  <span style="color: #66d9ef">else</span>
-      <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">;</span>
-<span style="color: #f92672">}</span>
-</pre></div>
-
-
-        <br/>
-        <!-- Example -->
-        <h5>Add Bonus - Grade</h5> 
-        <p>We can also refine the type of the method's <b>parameters</b>. In this example, both parameters have to be a <code>Percentage</code> (alias for <code>_ >= 0 && _ <= 100</code>) and <code>bonus</code> must be lesser than <code>grade</code>. <br/>We can refer to a previous parameter in the current parameter's refinement, but not the other way around. For example, <code>bonus</code> can refer to <code>grade</code> but <code>grade</code> cannot use <code>bonus</code> in its refinement.</p><br/>
-        <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@RefinementAlias</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(int x) { x &gt;= 0 &amp;&amp; x &lt;= 100}&quot;</span><span style="color: #f92672">)</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Grade</span><span style="color: #f92672">{</span>
-
-    <span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(_)&quot;</span><span style="color: #f92672">)</span>
-    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">addBonus</span><span style="color: #f92672">(</span><span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(_)&quot;</span><span style="color: #f92672">)</span>
-                               <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">grade</span><span style="color: #f92672">,</span>
-                               <span style="color: #a6e22e">@Refinement</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Percentage(_) &amp;&amp; bonus &lt; grade&quot;</span><span style="color: #f92672">)</span>
-                               <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">bonus</span><span style="color: #f92672">){</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f92672">((</span><span style="color: #f8f8f2">bonus</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">grade</span><span style="color: #f92672">)</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">)</span>
-            <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">;</span>
-        <span style="color: #66d9ef">else</span>
-            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">grade</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">bonus</span><span style="color: #f92672">;</span>
-    <span style="color: #f92672">}</span>
-
-<span style="color: #f92672">}</span>
-</pre></div>
-
-        
-        <!-- ################ END METHODS ################ -->
-
-      </div>
-    </div>
-  </div>
-</section>
-<section class="w3l-feature-code" id="features">
-  <a id="refinementClasses">
-	<div class="grid top-bottom" style="padding: 25px 0px;">
-		<div class="container">
-			<div class="heading text-center mx-auto">
-                <h3 class="head text-white">Refinements in Classes</h3>
-                <p class="my-3 head text-white">LiquidJava contains the mechanisms to model Object Type State.
-                <br/>
-                Since class methods can have effects on the internal state of objects, each method can be annotated with the allowed state transitions using the <code>@StateRefinement(from = "...", to = "...")</code> annotation. In this annotation, the <code>from</code> argument represents the object states in which the method can be invoked, whereas the <code>to</code> argument represents the state the object will have at the end of the method execution. <br/>
-                There are two possibilities of modelling object state:<br/>
-                <b>State Sets:</b> If a class has a defined set of states, it is possible to create multiple <code>@StateSet</code> that include the allowed object states.<br/>
-                <b>Ghost Properties:</b> To model other properties (int or boolean) it is possible to create <code>@Ghost</code> properties that work as uninterpreted functions.<br/>
-
-                In either case, whenever there is a need to refer to the previous state of the object, it is possible to use the  <code>old</code> keyword.
-                </p>
-      </div>
-    </div>
-  </div>
-  </a>
-</section>
-<section class="w3l-about ">
-  <div class="skills-bars py-5" style="background-color: #fff;">
-   <div class="container py-md-3">
-    <div class="heading mx-auto">
-        <!-- ################ CLASSES ################ -->
-        <!-- <div class="papers text-center"> -->
-        <!-- Example -->
-        <h5></h5> 
-        <p>If a class follows an implicit protocol that can be described by a DFA, then the protocol can be described in LiquidJava to ensure that the different methods are invoked in the correct order. <br/>To define the possible object states we create a string array with their names inside the <code>@StateSet</code> annotation.
-        <br/>Then these states can be used inside <code>@StateRefinement</code> annotations to ensure the object state of the object in the beginning of the method call (<code>from</code>) and change the state at the end of the invocation (<code>to</code>).
-        <br/>
-        This example implements an order for the composition of an email:
-        <br/>
-        
-          - <b>Constructor</b> - constructor starts the object with emptyEmail state<br/>
-          - <b>From Method</b> - changes state from emptyEmail to senderSet<br/>
-          - <b>To Method</b> - can accept the object in senderSet state or receiverSet state</br>
-          - <b>Subject Method</b> - the object needs to be in receiverSet state but does not transition to another, staying in the same state. The invocation of this method is optional to complete the protocol</br>
-          - <b> Method Body</b> - once the receiver is set the body of the email also be set, changing the object state to bodySet.
-        
+<section class="w3l-about lj-section">
+  <a id="refinementVariables"></a>
+  <div class="container py-md-4 py-3">
+    <header class="lj-section-header">
+      <span class="lj-section-eyebrow">Variables</span>
+      <h3 class="lj-section-title">Refinements in Variables</h3>
+      <p class="lj-section-lede">
+        Add a <code class="lj-inline">@Refinement</code> wherever you already have a basic type — local variables, fields, or anywhere else.
       </p>
-    <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">@StateSet</span><span style="color: #f92672">({</span><span style="color: #e6db74">&quot;emptyEmail&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;receiverSet&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;senderSet&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;bodySet&quot;</span><span style="color: #f92672">})</span>
-<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Email</span> <span style="color: #f92672">{</span>
+    </header>
+  </div>
+</section>
 
-  <span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;emptyEmail(this)&quot;</span><span style="color: #f92672">)</span>
-  <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">Email</span><span style="color: #f92672">()</span> <span style="color: #f92672">{...}</span>
+<section class="w3l-about lj-mini-section">
+  <div class="container py-md-4 py-3">
+    <div class="lj-mini-grid">
 
-  <span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">from</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;emptyEmail(this)&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;senderSet(this)&quot;</span><span style="color: #f92672">)</span>
-  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">from</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">)</span> <span style="color: #f92672">{...}</span>
+      <article class="lj-mini-card">
+        <header class="lj-mini-head">
+          <span class="lj-mini-eyebrow">Variable</span>
+          <h5 class="lj-mini-title">Positive</h5>
+        </header>
+        <p class="lj-mini-desc">The variable has a value greater than zero.</p>
+<pre class="lj-mini-code"><code class="language-java">@Refinement("positive &gt; 0")
+int positive;
+positive = 50;   // Correct
+positive = -1;   // Error</code></pre>
+      </article>
 
-  <span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">from</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;(senderSet(this)) || (receiverSet(this))&quot;</span><span style="color: #f92672">,</span>
-                   <span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span>  <span style="color: #e6db74">&quot;receiverSet(this)&quot;</span><span style="color: #f92672">)</span>
-  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">to</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">)</span> <span style="color: #f92672">{...}</span>
+      <article class="lj-mini-card">
+        <header class="lj-mini-head">
+          <span class="lj-mini-eyebrow">Variable</span>
+          <h5 class="lj-mini-title">Percentage</h5>
+        </header>
+        <p class="lj-mini-desc">Lower and upper bounds set on a variable. The <code class="lj-inline">_</code> wildcard refers to the variable being refined.</p>
+<pre class="lj-mini-code"><code class="language-java">@Refinement("_ &gt;= 0 &amp;&amp; _ &lt;= 100")
+int percentage;
+percentage = 50;        // Correct
+percentage = 10 + 99;   // Error</code></pre>
+      </article>
 
-  <span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">from</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;receiverSet(this)&quot;</span><span style="color: #f92672">,</span>  <span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;receiverSet(this)&quot;</span><span style="color: #f92672">)</span>
-  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">subject</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">)</span> <span style="color: #f92672">{...}</span>
+      <article class="lj-mini-card lj-mini-card--wide">
+        <header class="lj-mini-head">
+          <span class="lj-mini-eyebrow">Class fields · alias</span>
+          <h5 class="lj-mini-title">RGB fields</h5>
+        </header>
+        <p class="lj-mini-desc">Class fields can be refined like any local variable. The <code class="lj-inline">RGB</code> alias keeps each channel between 0 and 255.</p>
+<pre class="lj-mini-code"><code class="language-java">@RefinementAlias("RGB(int x) { x &gt;= 0 &amp;&amp; x &lt;= 255 }")
+class MyColor {
+  @Refinement("RGB(r)") int r;
+  @Refinement("RGB(_)") int g;
+  @Refinement("RGB(_)") int b;
+}</code></pre>
+      </article>
 
-  <span style="color: #a6e22e">@StateRefinement</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">from</span><span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;receiverSet(this)&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">to</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;bodySet(this)&quot;</span><span style="color: #f92672">)</span>
-  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">body</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">)</span> <span style="color: #f92672">{...}</span>
-
-<span style="color: #f92672">}</span>
-</pre></div>
-
-    <p>Invocation</p>
-
-    <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">//Correct</span>
-<span style="color: #f8f8f2">Email</span> <span style="color: #f8f8f2">e</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Email</span><span style="color: #f92672">();</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">from</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Alice&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">to</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Bob&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">to</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Carol&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">body</span><span style="color: #f92672">();</span>
-
-<span style="color: #75715e">//Error</span>
-<span style="color: #f8f8f2">Email</span> <span style="color: #f8f8f2">e</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Email</span><span style="color: #f92672">();</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">to</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Bob&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">from</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Alice&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">to</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Carol&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">subject</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Hello World!&quot;</span><span style="color: #f92672">);</span>
-<span style="color: #f8f8f2">e</span><span style="color: #f92672">.</span><span style="color: #a6e22e">body</span><span style="color: #f92672">();</span>
-</pre></div>
-
-
- 
-
-        <!-- </div> -->
-        </div>
-    
-      </div>
-      
-     </div>
     </div>
-</section> 
+  </div>
+</section>
+<section class="w3l-about lj-section">
+  <a id="refinementMethods"></a>
+  <div class="container py-md-4 py-3">
+    <header class="lj-section-header">
+      <span class="lj-section-eyebrow">Methods</span>
+      <h3 class="lj-section-title">Refinements in Methods</h3>
+      <p class="lj-section-lede">
+        Both parameters and return values can be refined. Parameter refinements constrain how the method may be called; the return refinement constrains what the body may return.
+      </p>
+    </header>
+  </div>
+</section>
+<section class="w3l-about lj-mini-section">
+  <div class="container py-md-4 py-3">
+    <div class="lj-mini-grid">
+
+      <article class="lj-mini-card">
+        <header class="lj-mini-head">
+          <span class="lj-mini-eyebrow">Method · return</span>
+          <h5 class="lj-mini-title">Absolute</h5>
+        </header>
+        <p class="lj-mini-desc">Refine the <b>return type</b> with an annotation above the method. The <code class="lj-inline">_</code> wildcard refers to the return value.</p>
+<pre class="lj-mini-code"><code class="language-java">@Refinement("_ &gt;= 0 &amp;&amp; _ &gt;= n")
+public static int absolute(int n) {
+  if (0 &lt;= n)  return n;
+  else         return 0 - n;
+}</code></pre>
+      </article>
+
+      <article class="lj-mini-card lj-mini-card--wide">
+        <header class="lj-mini-head">
+          <span class="lj-mini-eyebrow">Method · parameters</span>
+          <h5 class="lj-mini-title">Add Bonus &mdash; Grade</h5>
+        </header>
+        <p class="lj-mini-desc">Refine method <b>parameters</b>. Both must satisfy the <code class="lj-inline">Percentage</code> alias, and <code class="lj-inline">bonus</code> can refer to <code class="lj-inline">grade</code> (later parameters can mention earlier ones, never the reverse).</p>
+<pre class="lj-mini-code"><code class="language-java">@RefinementAlias("Percentage(int x) { x &gt;= 0 &amp;&amp; x &lt;= 100 }")
+public class Grade {
+
+  @Refinement("Percentage(_)")
+  public static int addBonus(
+      @Refinement("Percentage(_)") int grade,
+      @Refinement("Percentage(_) &amp;&amp; bonus &lt; grade") int bonus) {
+    if ((bonus + grade) &gt; 100) return 100;
+    else                       return grade + bonus;
+  }
+}</code></pre>
+      </article>
+
+    </div>
+  </div>
+</section>
+<section class="w3l-about lj-section">
+  <a id="refinementClasses"></a>
+  <div class="container py-md-4 py-3">
+    <header class="lj-section-header">
+      <span class="lj-section-eyebrow">Classes</span>
+      <h3 class="lj-section-title">Refinements in Classes</h3>
+      <p class="lj-section-lede">
+        LiquidJava models object lifecycles with two primitives: <code class="lj-inline">@StateSet</code> for named states and <code class="lj-inline">@Ghost</code> for auxiliary integer/boolean properties. Methods declare allowed transitions with <code class="lj-inline">@StateRefinement(from = …, to = …)</code>; use <code class="lj-inline">old(this)</code> inside <code class="lj-inline">to</code> to refer to the pre-call state. Browse real JDK protocols below.
+      </p>
+    </header>
+  </div>
+</section>
+<section class="w3l-about lj-gallery-section">
+  <div class="lj-gallery-bg py-5">
+   <div class="container py-md-3">
+
+      <div class="lj-gallery" id="ljGallery">
+        <aside class="lj-sidebar">
+          <div class="lj-filters" data-group="complexity" aria-label="Filter by complexity">
+            <button type="button" class="lj-chip lj-chip--active" data-value="all">All</button>
+            <button type="button" class="lj-chip" data-value="simple">Simple</button>
+            <button type="button" class="lj-chip" data-value="moderate">Moderate</button>
+            <button type="button" class="lj-chip" data-value="complex">Complex</button>
+          </div>
+          <div class="lj-filters lj-filters--factor" data-group="factor" aria-label="Filter by factor">
+            <button type="button" class="lj-chip lj-chip--small" data-value="typestate">typestate</button>
+            <button type="button" class="lj-chip lj-chip--small" data-value="refinement">refinement</button>
+            <button type="button" class="lj-chip lj-chip--small" data-value="conditional">conditional</button>
+            <button type="button" class="lj-chip lj-chip--small" data-value="orthogonal">orthogonal</button>
+          </div>
+          <p class="lj-count" id="ljCount"></p>
+          <ul class="lj-example-list" id="ljList" aria-label="Examples"></ul>
+        </aside>
+
+        <article class="lj-detail" id="ljDetail" aria-live="polite">
+          <header class="lj-detail-head">
+            <p class="lj-classname" id="ljClass"></p>
+            <h5 class="lj-title" id="ljTitle"></h5>
+            <p class="lj-blurb" id="ljBlurb"></p>
+            <div class="lj-meta" id="ljMeta"></div>
+          </header>
+
+          <figure class="lj-state-diagram" aria-label="State diagram">
+            <figcaption class="lj-figcap">State diagram</figcaption>
+            <div class="lj-mermaid" id="ljMermaid"></div>
+          </figure>
+
+          <div class="lj-tabs" role="tablist" aria-label="Code views">
+            <button type="button" class="lj-tab lj-tab--active" data-tab="spec" role="tab" aria-selected="true">Spec</button>
+            <button type="button" class="lj-tab lj-tab--err" data-tab="incorrect" role="tab" aria-selected="false"><span class="lj-glyph">✕</span>&nbsp;Misuse</button>
+            <button type="button" class="lj-tab lj-tab--ok" data-tab="correct" role="tab" aria-selected="false"><span class="lj-glyph">✓</span>&nbsp;Correct</button>
+          </div>
+
+          <pre class="lj-code"><code id="ljCode"></code></pre>
+
+          <div class="lj-verifier" id="ljVerifier" data-state="ok">
+            <div class="lj-verifier-head">
+              <span class="lj-verifier-label">verifier</span>
+              <button type="button" class="lj-run" id="ljRun">▶ Run verifier</button>
+            </div>
+            <pre class="lj-verifier-body" id="ljVerifierBody"></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
   
  
  <!-- grids block 5 -->
@@ -647,6 +601,247 @@ Author URL: http://w3layouts.com
   </script>
   <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Examples gallery -->
+  <script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+    const root = $('ljGallery');
+    if (!root) return;
+
+    const state = {
+      examples: [],
+      activeId: null,
+      activeTab: 'spec',
+      complexity: 'all',
+      factors: new Set(),
+      mermaidReady: false,
+      runToken: 0,
+    };
+
+    const fileFor = (ex, tab) => ({
+      spec: 'spec.java',
+      correct: 'correct.java',
+      incorrect: 'incorrect.java',
+    }[tab]);
+
+    async function fetchText(path) {
+      const r = await fetch(path, { cache: 'no-cache' });
+      if (!r.ok) throw new Error(path + ' -> ' + r.status);
+      return r.text();
+    }
+
+    function passesFilter(ex) {
+      if (state.complexity !== 'all' && ex.complexity !== state.complexity) return false;
+      for (const f of state.factors) if (!ex.factors.includes(f)) return false;
+      return true;
+    }
+
+    function renderList() {
+      const list = $('ljList');
+      list.innerHTML = '';
+      const visible = state.examples.filter(passesFilter);
+      $('ljCount').textContent =
+        visible.length + ' of ' + state.examples.length + ' examples';
+      for (const ex of visible) {
+        const li = document.createElement('li');
+        li.className = 'lj-item' + (ex.id === state.activeId ? ' lj-item--active' : '');
+        li.dataset.id = ex.id;
+        li.innerHTML =
+          '<span class="lj-item-title">' + ex.title + '</span>' +
+          '<span class="lj-item-class">' + ex.className + '</span>' +
+          '<span class="lj-badge lj-badge--' + ex.complexity + '">' + ex.complexity + '</span>';
+        li.addEventListener('click', () => selectExample(ex.id));
+        list.appendChild(li);
+      }
+      if (visible.length && !visible.some(e => e.id === state.activeId)) {
+        selectExample(visible[0].id);
+      }
+    }
+
+    async function renderDetail() {
+      const ex = state.examples.find(e => e.id === state.activeId);
+      if (!ex) return;
+      $('ljClass').textContent = ex.className;
+      $('ljTitle').textContent = ex.title;
+      $('ljBlurb').textContent = ex.blurb;
+      const meta = $('ljMeta');
+      meta.innerHTML =
+        '<span class="lj-badge lj-badge--' + ex.complexity + '">' + ex.complexity + '</span>' +
+        ex.factors.map(f =>
+          '<span class="lj-factor">' + f + '</span>').join('');
+
+      // mermaid diagram
+      const mer = await fetchText('assets/examples/data/' + ex.id + '/state.mmd');
+      const mountId = 'ljMermaidGraph_' + Date.now();
+      const host = $('ljMermaid');
+      host.innerHTML = '';
+      if (state.mermaidReady && window.mermaid) {
+        try {
+          const { svg } = await window.mermaid.render(mountId, mer);
+          host.innerHTML = svg;
+        } catch (e) {
+          host.textContent = mer;
+        }
+      } else {
+        host.textContent = mer;
+      }
+
+      // active tab content
+      await renderTab();
+    }
+
+    async function renderTab() {
+      const ex = state.examples.find(e => e.id === state.activeId);
+      const code = await fetchText(
+        'assets/examples/data/' + ex.id + '/' + fileFor(ex, state.activeTab));
+      const codeEl = $('ljCode');
+      codeEl.className = 'language-java';
+      codeEl.textContent = code;
+      if (window.Prism && window.Prism.highlightElement) {
+        try { window.Prism.highlightElement(codeEl); } catch (e) {}
+      }
+      codeEl.classList.remove('lj-code-fade');
+      // restart fade animation
+      void codeEl.offsetWidth;
+      codeEl.classList.add('lj-code-fade');
+
+      const verifier = $('ljVerifier');
+      const body = $('ljVerifierBody');
+      state.runToken++;
+      if (state.activeTab === 'incorrect') {
+        verifier.dataset.state = 'err';
+        body.textContent = '✕ ' + ex.violation;
+      } else if (state.activeTab === 'correct') {
+        verifier.dataset.state = 'ok';
+        body.textContent = '✓ All refinements verified.';
+      } else {
+        verifier.dataset.state = 'spec';
+        body.textContent = '— Press Run to check a usage in the Misuse / Correct tabs.';
+      }
+    }
+
+    function runVerifier() {
+      const body = $('ljVerifierBody');
+      const target = body.textContent;
+      if (!target) return;
+      const myToken = ++state.runToken;
+      body.textContent = '';
+      let i = 0;
+      const tick = () => {
+        if (myToken !== state.runToken) return;
+        body.textContent = target.slice(0, i);
+        i++;
+        if (i <= target.length) setTimeout(tick, 12);
+      };
+      tick();
+    }
+
+    function selectExample(id) {
+      state.activeId = id;
+      // update list active state
+      for (const li of document.querySelectorAll('#ljList .lj-item')) {
+        li.classList.toggle('lj-item--active', li.dataset.id === id);
+      }
+      renderDetail();
+    }
+
+    function selectTab(tab) {
+      state.activeTab = tab;
+      for (const btn of document.querySelectorAll('.lj-tab')) {
+        const isActive = btn.dataset.tab === tab;
+        btn.classList.toggle('lj-tab--active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      }
+      renderTab();
+    }
+
+    function wireFilters() {
+      for (const group of document.querySelectorAll('.lj-filters')) {
+        const kind = group.dataset.group;
+        for (const chip of group.querySelectorAll('.lj-chip')) {
+          chip.addEventListener('click', () => {
+            const v = chip.dataset.value;
+            if (kind === 'complexity') {
+              state.complexity = v;
+              for (const c of group.querySelectorAll('.lj-chip'))
+                c.classList.toggle('lj-chip--active', c === chip);
+            } else {
+              if (state.factors.has(v)) state.factors.delete(v);
+              else state.factors.add(v);
+              chip.classList.toggle('lj-chip--active', state.factors.has(v));
+            }
+            renderList();
+          });
+        }
+      }
+    }
+
+    function wireTabs() {
+      for (const btn of document.querySelectorAll('.lj-tab')) {
+        btn.addEventListener('click', () => selectTab(btn.dataset.tab));
+      }
+      $('ljRun').addEventListener('click', runVerifier);
+    }
+
+    async function init() {
+      try {
+        state.examples = await (await fetch('assets/examples/examples.json', { cache: 'no-cache' })).json();
+      } catch (e) {
+        root.innerHTML = '<p class="lj-error">Could not load examples.</p>';
+        return;
+      }
+      if (window.mermaid) {
+        window.mermaid.initialize({
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            primaryColor: '#ffe7ee',
+            primaryTextColor: '#212529',
+            primaryBorderColor: '#cf0e4e',
+            lineColor: '#cf0e4e',
+            fontFamily: 'Nunito, system-ui, sans-serif',
+            fontSize: '14px',
+          },
+          flowchart: { htmlLabels: true },
+        });
+        state.mermaidReady = true;
+      } else {
+        // mermaid loads with `defer`; poll briefly
+        const start = Date.now();
+        while (!window.mermaid && Date.now() - start < 3000) {
+          await new Promise(r => setTimeout(r, 50));
+        }
+        if (window.mermaid) {
+          window.mermaid.initialize({
+            startOnLoad: false,
+            theme: 'base',
+            themeVariables: {
+              primaryColor: '#fff7ec',
+              primaryTextColor: '#1a1a2e',
+              primaryBorderColor: '#1a1a2e',
+              lineColor: '#1a1a2e',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '14px',
+            },
+          });
+          state.mermaidReady = true;
+        }
+      }
+      wireFilters();
+      wireTabs();
+      state.activeId = state.examples[0].id;
+      renderList();
+      renderDetail();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
   </script>
 
 <!-- Smooth scrolling -->
