@@ -1,0 +1,4 @@
+stateDiagram-v2
+    [*] --> single : new ChoiceCallback(..., false)
+    [*] --> multiple : new ChoiceCallback(..., true)
+    multiple --> multiple : setSelectedIndexes(s)

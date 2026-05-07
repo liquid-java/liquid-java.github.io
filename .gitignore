@@ -15,7 +15,6 @@ CLAUDE.md
 
 # Local scripts and example scratch
 scripts/
-assets/examples/
 
 # Logs
 *.log

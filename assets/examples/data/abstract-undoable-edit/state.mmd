@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> aliveDone : new AbstractUndoableEdit()
+    aliveDone --> aliveNotDone : undo()
+    aliveNotDone --> aliveDone : redo()
+    aliveDone --> notAlive : die()
+    aliveNotDone --> notAlive : die()
+    notAlive --> [*]

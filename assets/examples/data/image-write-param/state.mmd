@@ -1,0 +1,20 @@
+stateDiagram-v2
+    direction LR
+
+    state "Tiling axis" as tiling {
+        [*] --> startTiling : new ImageWriteParam(locale)
+        startTiling --> tilingExplicit : setTilingMode(2)
+        tilingExplicit --> startTiling : setTilingMode(!=2)
+        tilingExplicit --> tilingSet : setTiling(w, h, ...)
+        tilingSet --> tilingSet : setTiling(...) / getTileWidth()
+        tilingSet --> startTiling : setTilingMode(!=2)
+    }
+
+    state "Compression axis" as compression {
+        [*] --> startCompression : new ImageWriteParam(locale)
+        startCompression --> compressionExplicit : setCompressionMode(2)
+        compressionExplicit --> startCompression : setCompressionMode(!=2)
+        compressionExplicit --> compressionSet : setCompressionType(...)
+        compressionSet --> compressionSet : getCompressionType()
+        compressionSet --> startCompression : setCompressionMode(!=2)
+    }

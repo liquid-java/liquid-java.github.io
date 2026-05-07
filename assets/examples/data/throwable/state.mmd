@@ -1,0 +1,6 @@
+stateDiagram-v2
+    [*] --> noThrowable : new Throwable()
+    [*] --> noThrowable : new Throwable(msg)
+    [*] --> withThrowable : new Throwable(msg, cause)
+    [*] --> withThrowable : new Throwable(cause)
+    noThrowable --> withThrowable : initCause(cause)
