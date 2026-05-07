@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> unconnected : new Socket()
+    [*] --> connected : new Socket(host, port)
+    unconnected --> bound : bind(addr)
+    bound --> connected : connect(endpoint)
+    connected --> inputShutdown : shutdownInput()
+    connected --> outputShutdown : shutdownOutput()
+    inputShutdown --> bothShutdown : shutdownOutput()
+    outputShutdown --> bothShutdown : shutdownInput()
+    unconnected --> closed : close()
+    bound --> closed : close()
+    connected --> closed : close()
+    inputShutdown --> closed : close()
+    outputShutdown --> closed : close()
+    bothShutdown --> closed : close()
+    closed --> [*]

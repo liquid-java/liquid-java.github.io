@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> opened : new ZipFile(file)
+    opened --> opened : entries()
+    opened --> opened : getInputStream(e)
+    opened --> opened : stream()
+    opened --> closed : close()
+    closed --> [*]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "email",
+    "title": "Email",
+    "className": "Email (built-in tutorial)",
+    "complexity": "simple",
+    "factors": ["typestate"],
+    "blurb": "A four-step protocol for composing an email: sender, then recipient, then optional subject, then body. Hand-authored to introduce @StateSet and @StateRefinement.",
+    "violation": "Calling to(\"Bob\") in state emptyEmail; required: senderSet(this) or receiverSet(this)."
+  },
+  {
+    "id": "abstract-undoable-edit",
+    "title": "AbstractUndoableEdit",
+    "className": "javax.swing.undo.AbstractUndoableEdit",
+    "complexity": "simple",
+    "factors": ["typestate"],
+    "blurb": "An edit alternates between aliveDone and aliveNotDone before being killed. Calling redo() while already done is a protocol error.",
+    "violation": "redo() requires aliveNotDone(this), but this is in state aliveDone."
+  },
+  {
+    "id": "zip-file",
+    "title": "ZipFile",
+    "className": "java.util.zip.ZipFile",
+    "complexity": "simple",
+    "factors": ["typestate"],
+    "blurb": "Open a zip, read entries, then close it. Touching a closed ZipFile is a use-after-close bug.",
+    "violation": "stream() requires opened(this), but this is in state closed."
+  },
+  {
+    "id": "throwable",
+    "title": "Throwable",
+    "className": "java.lang.Throwable",
+    "complexity": "simple",
+    "factors": ["typestate"],
+    "blurb": "initCause() is only legal once — on a Throwable created without a cause. Calling it on one that already has a cause throws at runtime; LiquidJava catches it statically.",
+    "violation": "initCause() requires noThrowable(this), but this is in state withThrowable."
+  },
+  {
+    "id": "choice-callback",
+    "title": "ChoiceCallback",
+    "className": "javax.security.auth.callback.ChoiceCallback",
+    "complexity": "moderate",
+    "factors": ["typestate", "conditional"],
+    "blurb": "The constructor lands in single or multiple based on a boolean argument. setSelectedIndexes() is only valid in multiple. The transition is conditional on a parameter value — a ternary in the spec.",
+    "violation": "setSelectedIndexes() requires multiple(this), but this is in state single."
+  },
+  {
+    "id": "image-write-param",
+    "title": "ImageWriteParam",
+    "className": "javax.imageio.ImageWriteParam",
+    "complexity": "complex",
+    "factors": ["typestate", "orthogonal", "conditional"],
+    "blurb": "Two independent state machines on the same object: a tiling axis and a compression axis, each with its own (start → explicit → set) progression. Calls on one axis don't perturb the other.",
+    "violation": "getCompressionType() requires compressionExplicit(this) or compressionSet(this), but the compression axis is in state startCompression."
+  },
+  {
+    "id": "buffered-reader",
+    "title": "BufferedReader",
+    "className": "java.io.BufferedReader",
+    "complexity": "complex",
+    "factors": ["typestate"],
+    "blurb": "open ⇄ marked, both heading to closed. reset() only works after a mark(); double-resetting is a classic mistake.",
+    "violation": "reset() requires marked(this), but this is in state open."
+  },
+  {
+    "id": "socket",
+    "title": "Socket",
+    "className": "java.net.Socket",
+    "complexity": "complex",
+    "factors": ["typestate"],
+    "blurb": "Six states: unconnected, bound, connected, inputShutdown, outputShutdown, bothShutdown, closed. Many setters are restricted to the connected state.",
+    "violation": "setReuseAddress() requires connected(this), but this is in state inputShutdown."
+  },
+  {
+    "id": "uuid",
+    "title": "UUID",
+    "className": "java.util.UUID",
+    "complexity": "complex",
+    "factors": ["refinement", "typestate"],
+    "blurb": "The classifier is bit-math on the constructor argument: (mostSigBits/4096) % 16 == 1 → timeBased, else dceSecurityNameRandom. clockSequence() is rejected on the random branch — an SMT predicate decides which state you're in.",
+    "violation": "clockSequence() requires maybeTime(this) or timeBased(this), but this is in state dceSecurityNameRandom."
+  }
+]

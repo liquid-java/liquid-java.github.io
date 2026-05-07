@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> timeBased : new UUID(m, l) when version bit == 1
+    [*] --> dceSecurityNameRandom : new UUID(m, l) otherwise
+    [*] --> maybeTime : UUID.fromString(s)
+    [*] --> dceSecurityNameRandom : UUID.randomUUID()
+    timeBased --> timeBased : clockSequence()
+    maybeTime --> maybeTime : clockSequence()

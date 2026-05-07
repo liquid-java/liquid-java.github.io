@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> open : new BufferedReader(in)
+    open --> open : read()
+    marked --> marked : read()
+    open --> marked : mark(n)
+    marked --> marked : mark(n)
+    marked --> open : reset()
+    open --> closed : close()
+    marked --> closed : close()
+    closed --> [*]

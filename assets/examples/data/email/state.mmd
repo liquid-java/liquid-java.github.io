@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> emptyEmail : new Email()
+    emptyEmail --> senderSet : from(s)
+    senderSet --> receiverSet : to(s)
+    receiverSet --> receiverSet : to(s)
+    receiverSet --> receiverSet : subject(s)
+    receiverSet --> bodySet : body(s)
