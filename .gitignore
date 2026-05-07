@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code / superpowers scratch
+.superpowers/
+CLAUDE.md
+.claude/
+
+# Local scripts and example scratch
+scripts/
+assets/examples/
+
+# Logs
+*.log
