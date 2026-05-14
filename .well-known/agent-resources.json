@@ -1,0 +1,43 @@
+{
+  "name": "LiquidJava",
+  "description": "LiquidJava extends Java with refinement types to express stronger code restrictions and catch bugs before execution.",
+  "homepage": "https://liquid-java.github.io/",
+  "documentation": "https://liquid-java.github.io/liquidjava-docs/",
+  "resources": [
+    {
+      "name": "GitHub organization",
+      "url": "https://github.com/liquid-java",
+      "type": "source-organization"
+    },
+    {
+      "name": "Verifier, API, and examples",
+      "url": "https://github.com/liquid-java/liquidjava",
+      "type": "source-repository"
+    },
+    {
+      "name": "Documentation repository",
+      "url": "https://github.com/liquid-java/liquidjava-docs",
+      "type": "source-repository"
+    },
+    {
+      "name": "Tutorial repository",
+      "url": "https://github.com/liquid-java/liquidjava-tutorial",
+      "type": "source-repository"
+    },
+    {
+      "name": "VS Code extension repository",
+      "url": "https://github.com/liquid-java/vscode-liquidjava",
+      "type": "source-repository"
+    },
+    {
+      "name": "VS Code Marketplace",
+      "url": "https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java",
+      "type": "extension-listing"
+    },
+    {
+      "name": "Open VSX",
+      "url": "https://open-vsx.org/extension/AlcidesFonseca/liquid-java",
+      "type": "extension-listing"
+    }
+  ]
+}

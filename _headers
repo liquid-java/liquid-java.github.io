@@ -1,0 +1,14 @@
+/
+  Link: </sitemap.xml>; rel="describedby"; type="application/xml", </llms.txt>; rel="describedby"; type="text/plain", </.well-known/agent-resources.json>; rel="describedby"; type="application/json", <https://liquid-java.github.io/liquidjava-docs/>; rel="service-doc"
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/agent-resources.json
+  Content-Type: application/json; charset=utf-8

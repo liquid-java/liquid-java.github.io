@@ -1,0 +1,18 @@
+# LiquidJava
+
+LiquidJava extends Java with refinement types so developers can express stronger code restrictions and catch bugs before execution.
+
+## Primary site
+
+- Homepage: https://liquid-java.github.io/
+- Documentation: https://liquid-java.github.io/liquidjava-docs/
+
+## Related resources
+
+- GitHub organization: https://github.com/liquid-java
+- Verifier, API, and examples: https://github.com/liquid-java/liquidjava
+- Documentation repository: https://github.com/liquid-java/liquidjava-docs
+- Tutorial repository: https://github.com/liquid-java/liquidjava-tutorial
+- VS Code extension repository: https://github.com/liquid-java/vscode-liquidjava
+- VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java
+- Open VSX: https://open-vsx.org/extension/AlcidesFonseca/liquid-java
